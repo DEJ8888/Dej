@@ -1,2 +1,1 @@
-index.html
-Official DEJ Website
+Official DEJ Websitesi
