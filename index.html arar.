@@ -1,34 +1,568 @@
 <!doctype html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DEJ Token — Official</title>
-<meta name="description" content="Official information about DEJ Token.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c18">
+<meta name="description" content="Official information about ULTRADEJ, an Ethereum-based digital token.">
+<title>ULTRADEJ — Official</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080c18;color:#f5f7ff;line-height:1.6}.wrap{max-width:1050px;margin:auto;padding:24px 20px}nav{display:flex;justify-content:space-between;align-items:center}.logo{font-size:30px;font-weight:800}.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:#fff;color:#080c18;text-decoration:none;font-weight:700}.hero{padding:90px 0 70px}.hero h1{font-size:clamp(48px,9vw,84px);margin:0}.hero p{font-size:21px;color:#b9c2d8;max-width:700px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}.card{background:#12182a;border:1px solid #29334e;border-radius:16px;padding:22px;margin-top:18px}section{padding:35px 0}.muted{color:#aeb7cc}code{word-break:break-all}footer{margin-top:30px;padding:35px 0;border-top:1px solid #29334e;color:#8993aa}
+:root {
+  --bg: #080c18;
+  --panel: #121a27;
+  --border: #2a3a43;
+  --text: #f5f7ff;
+  --muted: #b9c2d2;
+  --gold: #e7bd73;
+  --gold-light: #f5dba8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.65;
+  background:
+    radial-gradient(ellipse at 82% 0%, #143d32 0%, transparent 38rem),
+    #080c18;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  width: min(1050px, calc(100% - 40px));
+  margin: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(231,189,115,.24);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.brand-name {
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 17px;
+  border-radius: 10px;
+  border: 1px solid rgba(231,189,115,.65);
+  background: linear-gradient(135deg,#f5dba8,#c18b3b);
+  color: #17140e;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.button.secondary {
+  background: #0c1320;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.hero {
+  padding: 80px 0 60px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(231,189,115,.38);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(44px,8.5vw,82px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero-copy {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: clamp(17px,2.4vw,21px);
+}
+
+.actions,
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+section {
+  padding: 30px 0;
+  scroll-margin-top: 24px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-size: clamp(25px,4vw,34px);
+  line-height: 1.2;
+}
+
+.section-heading p,
+.muted {
+  color: var(--muted);
+}
+
+.section-heading p {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+}
+
+.card {
+  min-width: 0;
+  margin-top: 12px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(145deg,#16212f,#0c1320);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin: 7px 0 0;
+  font-size: 21px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.contract-box {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #0c1320;
+}
+
+code {
+  color: var(--gold-light);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #0c1320;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.social-links a:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.notice {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 36px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  color: #8993aa;
+}
+
+footer a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+@media(max-width:520px) {
+  .wrap {
+    width: calc(100% - 28px);
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .site-header {
+    gap: 8px;
+  }
+
+  .site-header > .button {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-top: 58px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .button {
+    padding: 10px 13px;
+  }
+}
 </style>
 </head>
-<body>
+
+<body id="top">
 <div class="wrap">
-<nav><div class="logo">
-<img src="ultradej-logo.jpeg" alt="ULTRADEJ Logo" style="width:60px;height:60px;object-fit:contain;">
-</div><a class="btn" href="#details">Token Details</a></nav>
-<header class="hero"><h1>DEJ Token</h1><p>A blockchain-based digital token focused on transparent project information and community participation.</p><a class="btn" href="#details">Explore DEJ</a></header>
-<section id="details"><h2>Token Details</h2><div class="grid">
-<div class="card"><strong>Symbol</strong><p>DEJ</p></div>
-<div class="card"><strong>Total Supply</strong><p>1,000,000,000 DEJ</p></div>
-<div class="card"><strong>Decimals</strong><p>18</p></div>
-<div class="card"><strong>Asset Type</strong><p>Token</p></div>
-</div></section>
-<section><h2>About DEJ</h2><p class="muted">DEJ is a blockchain-based token. This website provides official project information for users, exchanges, explorers, and community members. Always verify the blockchain network and contract address before interacting with the token.</p></section>
-<section><h2>Contract Information</h2><div class="card">
-<p><strong>Blockchain:</strong> Ethereum</p>
-<p><strong>Contract Address:</strong><br><code>0xc39412b5833908ff919f06d734abc6e6f100f33e</code></p>
-</div></section>
-<section><h2>Disclaimer</h2><p class="muted">The information on this website is provided for informational purposes only and does not constitute financial, investment, legal, or tax advice. Digital assets involve risk. Please conduct your own research and verify all contract information before use.</p></section>
-<footer>© 2026 DEJ Token. All rights reserved.</footer>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="ULTRADEJ home">
+    <img src="ultradej-logo.jpeg" alt="ULTRADEJ Logo">
+    <span class="brand-name">ULTRADEJ</span>
+  </a>
+
+  <a class="button secondary" href="#details">Token Details</a>
+</header>
+
+<main>
+
+<section class="hero">
+  <span class="eyebrow">Official Token Information</span>
+
+  <h1>Welcome to <span>ULTRADEJ</span></h1>
+
+  <p class="hero-copy">
+    A digital token focused on transparency, accessibility,
+    and community-driven development.
+  </p>
+
+  <div class="actions">
+    <a class="button" href="#buy">Buy ULTRADEJ</a>
+    <a class="button secondary" href="#details">Explore Token ↓</a>
+  </div>
+</section>
+
+<section id="details">
+  <div class="section-heading">
+    <h2>Token Details</h2>
+    <p>Key information about the DEJ token.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="stat-label">Token Name</div>
+      <p class="stat-value">ULTRADEJ</p>
+    </article>
+
+    <article class="card">
+      <div class="stat-label">Symbol</div>
+      <p class="stat-value">DEJ</p>
+    </article>
+
+    <article class="card">
+      <div class="stat-label">Total Supply</div>
+      <p class="stat-value">1,000,000,000 DEJ</p>
+    </article>
+
+    <article class="card">
+      <div class="stat-label">Decimals</div>
+      <p class="stat-value">18</p>
+    </article>
+
+    <article class="card">
+      <div class="stat-label">Blockchain</div>
+      <p class="stat-value">Ethereum</p>
+    </article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-heading">
+    <h2>About DEJ</h2>
+  </div>
+
+  <div class="card">
+    <p class="muted">
+      DEJ is an Ethereum-based digital token created with a focus
+      on transparency, accessibility, and community-driven development.
+    </p>
+
+    <p class="muted">
+      With a total supply of 1,000,000,000 DEJ, the project provides
+      a clearly defined token structure and publicly verifiable
+      blockchain information.
+    </p>
+
+    <p class="muted">
+      DEJ is designed to build a recognizable digital asset ecosystem
+      through technology, community participation, and continuous development.
+    </p>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="section-heading">
+    <h2>Our Vision</h2>
+  </div>
+
+  <div class="card">
+    <p class="muted">
+      Building a recognizable digital asset through technology,
+      transparency, and community.
+    </p>
+  </div>
+</section>
+
+<section id="transparency">
+  <div class="section-heading">
+    <h2>Transparency</h2>
+  </div>
+
+  <div class="card">
+    <p class="muted">
+      DEJ operates on the Ethereum blockchain, allowing relevant
+      token information and transactions to be independently
+      verified on-chain.
+    </p>
+  </div>
+</section>
+
+<section id="contract">
+  <div class="section-heading">
+    <h2>Contract Information</h2>
+    <p>Verify the contract address before interacting.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>Blockchain:</strong> Ethereum</p>
+    <p><strong>Contract Address:</strong></p>
+
+    <div class="contract-box">
+      <code id="contractAddress">0xc39412b5833908ff919f06d734abc6e6f100f33e</code>
+    </div>
+
+    <div class="button-row">
+      <button class="button" id="copyAddress" type="button">
+        Copy Contract Address
+      </button>
+
+      <a class="button secondary" href="#buy">
+        Buy ULTRADEJ
+      </a>
+    </div>
+
+    <p class="notice" id="copyStatus" role="status" aria-live="polite"></p>
+
+    <p class="notice">
+      Always verify the contract address and blockchain network
+      independently before using the token.
+    </p>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="section-heading">
+    <h2>Buy ULTRADEJ</h2>
+  </div>
+
+  <div class="card">
+    <p class="muted">
+      A Uniswap liquidity pool is not available yet.
+      Until an official trading link is available, please verify
+      the contract details before taking any action.
+    </p>
+
+    <div class="button-row">
+      <a class="button" href="#contract">View Contract</a>
+
+      <button class="button secondary" id="copyBuyAddress" type="button">
+        Copy Contract Address
+      </button>
+    </div>
+
+    <p class="notice">
+      This button does not initiate a purchase or connect to a wallet.
+    </p>
+  </div>
+</section>
+
+<section id="community">
+  <div class="section-heading">
+    <h2>Social Media & Community</h2>
+    <p>Follow ULTRADEJ through the links below.</p>
+  </div>
+
+  <div class="card">
+    <div class="social-links">
+
+      <a href="https://www.facebook.com/share/1JFZWNo17B/?mibextid=wwXIfr"
+         target="_blank" rel="noopener noreferrer">
+        Facebook ↗
+      </a>
+
+      <a href="https://x.com/dejgroup?s=11"
+         target="_blank" rel="noopener noreferrer">
+        X (Twitter) ↗
+      </a>
+
+      <a href="https://www.tiktok.com/@dejgroup.proton.m?_r=1&_t=ZS-9ApKoLkbmWS"
+         target="_blank" rel="noopener noreferrer">
+        TikTok ↗
+      </a>
+
+      <a href="https://t.me/dejcrypto"
+         target="_blank" rel="noopener noreferrer">
+        Telegram ↗
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="disclaimer">
+  <div class="section-heading">
+    <h2>Disclaimer</h2>
+  </div>
+
+  <p class="muted">
+    The information on this website is provided for informational
+    purposes only and does not constitute financial, investment,
+    legal, or tax advice. Digital assets involve risk. Please conduct
+    your own research and verify all contract information before use.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 ULTRADEJ. All rights reserved.</span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
 </div>
+
+<script>
+(function () {
+  const address = document.getElementById("contractAddress").textContent.trim();
+  const status = document.getElementById("copyStatus");
+
+  async function copyContract() {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(address);
+      } else {
+        const field = document.createElement("textarea");
+        field.value = address;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+
+        document.body.appendChild(field);
+        field.select();
+
+        const copied = document.execCommand("copy");
+        field.remove();
+
+        if (!copied) {
+          throw new Error("Copy failed");
+        }
+      }
+
+      status.textContent = "Contract address copied successfully.";
+    } catch (error) {
+      status.textContent =
+        "Copy failed. Please select and copy the contract address manually.";
+    }
+  }
+
+  document.getElementById("copyAddress")
+    .addEventListener("click", copyContract);
+
+  document.getElementById("copyBuyAddress")
+    .addEventListener("click", copyContract);
+})();
+</script>
+
 </body>
 </html>
