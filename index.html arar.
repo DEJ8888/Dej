@@ -12,7 +12,9 @@
 </head>
 <body>
 <div class="wrap">
-<nav><div class="logo">DEJ</div><a class="btn" href="#details">Token Details</a></nav>
+<nav><div class="logo">
+<img src="ultradej-logo.jpeg" alt="ULTRADEJ Logo" style="width:60px;height:60px;object-fit:contain;">
+</div><a class="btn" href="#details">Token Details</a></nav>
 <header class="hero"><h1>DEJ Token</h1><p>A blockchain-based digital token focused on transparent project information and community participation.</p><a class="btn" href="#details">Explore DEJ</a></header>
 <section id="details"><h2>Token Details</h2><div class="grid">
 <div class="card"><strong>Symbol</strong><p>DEJ</p></div>
